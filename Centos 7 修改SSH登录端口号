@@ -1,9 +1,9 @@
-#注意！这里的Centos版本是7
+注意！这里的Centos版本是7
 
 step1 修改/etc/ssh/sshd_config
 vi /etc/ssh/sshd_config
 #Port 22         //这行去掉#号
-Port 20000      //下面添加这一行
+Port 20000      //如端口修改为20000
 
 step2 修改SELinux
 使用以下命令查看当前SElinux 允许的ssh端口：
