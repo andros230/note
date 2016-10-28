@@ -31,7 +31,16 @@ character-set-server=utf8
 保存后重启MariaDB  
 
 ### 四.安装PHP组件，使PHP支持 MariaDB  
-yum install php-mysql php-gd libjpeg* php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-bcmath php-mhash
+yum install php-mysql php-gd libjpeg* php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-bcmath php-mhash  
+
+### 五.PHP连接数据库中文乱码问题  
+代码中设置添加 $mysqli->query("SET NAMES UTF8")  
+$mysqli = new mysqli("localhost","root","andros230","feedback");  
+if ($mysqli->connect_error) {  
+    die("连接失败: " . $conn->connect_error);  
+}    
+`$mysqli->query("SET NAMES UTF8");`  
+$insert_row = $mysqli->query("INSERT INTO feedback (app,msg) VALUES('app名称','msg信息')");  
 
 
 
