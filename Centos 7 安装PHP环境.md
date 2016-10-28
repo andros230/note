@@ -30,6 +30,9 @@ vi /etc/my.cnf
 character-set-server=utf8  
 保存后重启MariaDB  
 
+ ### 四.2、安装PHP组件，使PHP支持 MariaDB  
+yum install php-mysql php-gd libjpeg* php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-bcmath php-mhash
+
 
 
 
