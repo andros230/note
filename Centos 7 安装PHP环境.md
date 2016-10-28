@@ -13,6 +13,14 @@ yum install mariadb mariadb-server
 systemctl restart mariadb.service #重启MariaDB  
 systemctl enable mariadb.service #设置MariaDB开机启动  
 
+
+修改root密码  
+1.以root身份在终端登陆，必须  
+2.输入 mysqladmin -u root -p password root  
+后面的 root 是要设置的密码  
+3.回车后出现 Enter password   
+输入旧密码，如果没有，直接回车  
+
 MariaDB中文乱码问题
 登录数据库后输入:  
 SHOW VARIABLES LIKE 'character%';  
