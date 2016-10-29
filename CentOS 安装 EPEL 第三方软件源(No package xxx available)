@@ -1,0 +1,2 @@
+如:提示 No package pptpd available (找不到pptpd安装包),使用下面命令
+yum install epel-release
