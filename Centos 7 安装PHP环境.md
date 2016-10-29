@@ -45,4 +45,4 @@ $insert_row = $mysqli->query("INSERT INTO feedback (app,msg) VALUES('app名称',
 
 
 
-
+php站点: /var/www/html
