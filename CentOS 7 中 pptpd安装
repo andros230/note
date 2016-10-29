@@ -1,0 +1,45 @@
+一.安装PPTPD
+#yum update
+#yum install pptpd
+如:提示 No package pptpd available (找不到pptpd安装包),使用下面命令
+#yum install epel-release
+
+二.pptpd配置
+vi /etc/pptpd.conf
+localip 192.168.9.1
+remoteip 192.168.9.11-250
+
+#vi /etc/ppp/options.pptpd
+添加:
+ms-dns 8.8.8.8
+ms-dns 8.8.4.4
+
+#vi /etc/ppp/chap-secrets
+vpnusername  pptpd  passowrd *
+注:vpnusername为用户名,password为密码,*表示任何IP都可登录
+
+#vi /etc/sysctl.conf 
+将net.ipv4.ip_forward = 0改成net.ipv4.ip_forward = 1
+保存修改后的文件，并执行如下命令
+#/sbin/sysctl -p
+
+配置firewall
+添加masquerade:
+#firewall-cmd --add-masquerade
+#firewall-cmd --permanent --add-masquerade
+确认masquerade是否成功添加：
+#firewall-cmd --query-masquerade
+如果还不行，添加一下命令
+#firewall-cmd --permanent --direct --add-rule ipv4 filter INPUT 0 -i eth1 -p tcp --dport pptp -j ACCEPT
+#firewall-cmd --permanent --direct --add-rule ipv4 filter INPUT 0 -i eth1 -p gre -j ACCEPT
+#firewall-cmd --permanent --direct --add-rule ipv4 filter POSTROUTING 0 -t nat -o eth1 -j MASQUERADE 
+#firewall-cmd --permanent --direct --add-rule ipv4 filter POSTROUTING 0 -t nat -s 192.168.99.0/28 -o eth1 -j MASQUERADE -t nat
+#firewall-cmd --reload
+注: eth1： 连接外网的网卡的名称,需修改为实际网卡
+
+
+启动PPTPD
+systemctl start pptpd
+
+设置开机启动
+systemctl enable pptpd
