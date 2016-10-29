@@ -45,8 +45,8 @@ $insert_row = $mysqli->query("INSERT INTO feedback (app,msg) VALUES('app名称',
 ### 六.mariadb远程访问
 登录数据后输入:  
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'IDENTIFIED BY '123456' WITH GRANT OPTION;
-flush privileges;
-root是登陆数据库的用户，123456是登陆数据库的密码，*就是意味着任何来源任何主机,另注意防火墙的3306端口
+flush privileges;  
+root是登陆数据库的用户，123456是登陆数据库的密码，*就是意味着任何来源任何主机,另注意防火墙的3306端口  
 
 
 
