@@ -1,4 +1,6 @@
-PHP接口示例
+#PHP接口示例
+##数据库添加数据
+
 ```php
 <?php
 $app = $_POST['app'];
@@ -31,7 +33,7 @@ if($insert_row){
 }
 ?>
 ```  
-android端示例
+##android端示例
 ```java
 public class MainActivity extends AppCompatActivity {
     private String TAG = "AA";
