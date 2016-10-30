@@ -34,7 +34,7 @@ if($insert_row){
 ```java
 public class MainActivity extends AppCompatActivity {
     private String TAG = "AA";
-    private String url = "http://52.209.57.30/feedback.php";
+    private String url = "http://192.168.1.3/feedback.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
