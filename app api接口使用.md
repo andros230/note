@@ -1,6 +1,4 @@
-###PHP接口示例
 ####数据库添加数据
-
 ```php
 <?php
 $app = $_POST['app'];
@@ -70,3 +68,20 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 ---
+查询数据
+```php
+<?php
+$mysqli = new mysqli("localhost","root","andros230","feedback");
+if ($mysqli->connect_error) {  
+    die("连接失败: " . $conn->connect_error); 
+}  
+$mysqli->query("SET NAMES UTF8");
+$result = $mysqli->query("select * from feedback");
+//或查询指定字段 $result = $mysqli->query("select app from feedback");
+$results = array();
+while ($row = mysqli_fetch_assoc($result)) {
+$results[] = $row;
+}
+echo json_encode($results,JSON_UNESCAPED_UNICODE);
+?>
+```
