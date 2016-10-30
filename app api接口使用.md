@@ -1,4 +1,4 @@
-####数据库添加数据
+#####数据库添加数据
 ```php
 <?php
 $app = $_POST['app'];
@@ -31,7 +31,7 @@ if($insert_row){
 }
 ?>
 ```  
-####android端示例
+#####android端示例
 ```java
 public class MainActivity extends AppCompatActivity {
     private String TAG = "AA";
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 ---
-查询数据
+#####查询数据
 ```php
 <?php
 $mysqli = new mysqli("localhost","root","andros230","feedback");
@@ -85,3 +85,4 @@ $results[] = $row;
 echo json_encode($results,JSON_UNESCAPED_UNICODE);
 ?>
 ```
+---
