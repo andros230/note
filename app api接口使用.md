@@ -112,3 +112,21 @@ if($result){
 }
 ?>
 ```
+---
+#####删除数据
+```php
+<?php
+$mysqli = new mysqli("localhost","root","andros230","feedback");
+if ($mysqli->connect_error) {  
+     die("连接失败: " . $conn->connect_error);
+}  
+$mysqli->query("SET NAMES UTF8");
+$result = $mysqli->query("delete from feedback where app='aaa'");
+if($result){
+	echo "成功";
+}else{
+	echo $mysqli->error;
+}
+?>
+```
+---
