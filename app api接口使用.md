@@ -70,9 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
-
 ---
-
 #####查询数据
 ```php
 <?php
@@ -97,6 +95,4 @@ echo $row['app'];
 echo $row['msg'];
 }
 ```
-
 ---
-
