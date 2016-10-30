@@ -88,8 +88,8 @@ echo json_encode($results,JSON_UNESCAPED_UNICODE);
 #####获取查询结果的指定字段
 ```php
 while ($row = mysqli_fetch_assoc($result)) {
-echo $row[`app`];
-echo $row[`msg`];
+echo $row['app'];
+echo $row['msg'];
 }
 ```
 ---
