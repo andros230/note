@@ -34,7 +34,7 @@ character-set-server=utf8
 yum install php-mysql php-gd libjpeg* php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-bcmath php-mhash  
 
 ### 五.PHP连接数据库中文乱码问题  
-代码中设置添加 $mysqli->query("SET NAMES UTF8")  
+代码中设置添加 `$mysqli->query("SET NAMES UTF8")`  
 ```php
 $mysqli = new mysqli("localhost","root","andros230","feedback");  
 if ($mysqli->connect_error) {  
