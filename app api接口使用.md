@@ -29,4 +29,40 @@ if($insert_row){
 	echo json_encode($error,JSON_UNESCAPED_UNICODE);
 }
 ?>
+```  
+
+```java
+public class MainActivity extends AppCompatActivity {
+    private String TAG = "AA";
+    private String url = "http://52.209.57.30/feedback.php";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d(TAG, "response -> " + response);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, error.getMessage(), error);
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+                //在这里设置需要post的参数
+                Map<String, String> params = new HashMap<>();
+                params.put("app", "app名称");
+                params.put("msg", "消息内容");
+                return params;
+            }
+        };
+        requestQueue.add(stringRequest);
+    }
+}
 ```
