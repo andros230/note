@@ -1,6 +1,6 @@
 ### 一、安装Apache
 yum install httpd  
->systemctl start httpd.service #启动apache  
+systemctl start httpd.service #启动apache  
 systemctl stop httpd.service #停止apache  
 systemctl restart httpd.service #重启apache  
 systemctl enable httpd.service #设置apache开机启动  
