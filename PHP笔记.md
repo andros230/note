@@ -105,7 +105,7 @@ if ($mysqli->connect_error) {
 }  
 $mysqli->query("SET NAMES UTF8");
 $result = $mysqli->query("update feedback set app='aaa' where app='b'");
-if($result){
+if(mysqli_affected_rows($mysqli)){
 	echo "成功";
 }else{
 	echo $mysqli->error;
@@ -122,7 +122,7 @@ if ($mysqli->connect_error) {
 }  
 $mysqli->query("SET NAMES UTF8");
 $result = $mysqli->query("delete from feedback where app='aaa'");
-if($result){
+if(mysqli_affected_rows($mysqli)){
 	echo "成功";
 }else{
 	echo $mysqli->error;
